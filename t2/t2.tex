@@ -11,10 +11,10 @@
 
 \usepackage{cmap}				% Mapear caracteres especiais no PDF
 \usepackage{lmodern}			% Usa a fonte Latin Modern
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage[T1]{fontenc}		% Seleção de códigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificação do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{nomencl} 			% Lista de símbolos
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 
@@ -39,8 +39,7 @@
 	\fi}%
 
 \titulo{Avaliação de Expressões}
-\autor{Diego P. da Jornada\thanks{diego.jornada@acad.pucrs.br}\and Milton C. de
-Oliveira\thanks{milton.oliveira@acad.pucrs.br}}
+\autor{Diego P. da Jornada\thanks{diego.jornada@acad.pucrs.br}\and Milton C. de Oliveira\thanks{milton.oliveira@acad.pucrs.br}}
 
 \definecolor{blue}{RGB}{41,5,195}
 
@@ -95,26 +94,53 @@ Oliveira\thanks{milton.oliveira@acad.pucrs.br}}
         
     \section{Exercício Um}
     
+        
         \subsection{}
         \begin{center}
-        \synttree[
-        <BLOCO>
-            [\{]
-            [<LINHA> [<INSTRUCAO> [<VAR> [C]] [.x :=] [<EXP> [<EXP1> [B]]] ] [;]]
-            [<LINHA> [<INSTRUCAO> [<VAR> [A]] [.x :=] [<EXP> [EXP2 [<VAR> [C]] [<OP> [*]][<CONST> [2]]]] [;]]]
-            [\}]
+        \synttree
+            [
+            <bloco>
+                [\{]
+                [<linha> [<instrucao> [<var> [C]] [.x :=] [<exp> [<exo1> [B]]] ] [;]]
+                [<linha> [<instrucao> [<var> [A]] [.x :=] [<exp> [exp2 [<var> [C]] [<op> [*]][<const> [2]]]] [;]]]
+                [\}]
             ]
         \end{center}
+            
         \subsection{}
-        
+            \begin{center}
+            \includegraphics[scale=.75]{EXP1} 
+            \end{center}
+\pagebreak
     \section{Exercício Dois}
-    
         \subsection{}
+        \paragraph{Árvode de Derivação:}
+            \begin{center}
+            \synttree[/[*[3][x]] [-[* [4] [*[x][z]]] [\^ [y] [3]]]]
+            \end{center}
+            
+        \paragraph{Notação de Prefixo:} / * 3 x - * 4 * x 2 \^\ y 3
+        \paragraph{Notação de Sufixo:} 3 x * 4 x z * * y 3 \^\ - /
         
         \subsection{}
-    
+        \paragraph{Árvode de Derivação:}
+            \begin{center}
+            \synttree[/ [+ [/ [+ [2] [x]] [y]] [2]] [x]]
+            \end{center}
+            
+        \paragraph{Notação de Prefixo:} / + / + 2 x y 2 x
+        \paragraph{Notação de Sufixo:} 2 x + y / 2 + x /
+\pagebreak
         \subsection{}
-        
+        \paragraph{Árvode de Derivação:}
+            \begin{center}
+            \synttree[- [\^ [\^ [\^ [x] [3]] [3]] [3]] [2]]
+            \end{center}
+            
+        \paragraph{Notação de Prefixo:} - \^\ \^\ \^\ x 3 3 3 2 
+        \paragraph{Notação de Sufixo:} x 3 \^\ 3 \^\ 3 \^\ 2 -
     \section{Exercício Três}
+    
+    x y - z + w /
 
 \end{document}
