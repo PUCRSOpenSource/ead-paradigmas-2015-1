@@ -79,7 +79,7 @@
 
 \begin{resumoumacoluna}
     
-    Este artigo descreve as soluções para a segunda tarefa realizada na disciplina de \emph{Paradigmas de Linguagens de Programação} de 2015/1
+    Este artigo descreve as soluções para a segunda tarefa proposta pela disciplina de \emph{Paradigmas de Linguagens de Programação} de 2015/1
 
  \vspace{\onelineskip}
  
@@ -102,7 +102,7 @@
             <bloco>
                 [\{]
                 [<linha> [<instrucao> [<var> [C]] [.x :=] [<exp> [<exp1> [B]]] ] [;]]
-                [<linha> [<instrucao> [<var> [A]] [.x :=] [<exp> [exp2 [<var> [C]] [<op> [*]][<const> [2]]]] [;]]]
+                [<linha> [<instrucao> [<var> [A]] [.x :=] [<exp> [exp2 [<var> [C]] [<op> [*]] [<const> [2]] ]] ][;]]
                 [\}]
             ]
         \end{center}
@@ -111,19 +111,21 @@
             \begin{center}
             \includegraphics[scale=.75]{EXP1} 
             \end{center}
+
 \pagebreak
+    
     \section{Exercício Dois}
         \subsection{}
-        \paragraph{Árvode de Derivação:}
+        \paragraph{Árvore de Derivação:}
             \begin{center}
             \synttree[/[*[3][x]] [-[* [4] [*[x][z]]] [\^ [y] [3]]]]
             \end{center}
             
-        \paragraph{Notação de Prefixo:} / * 3 x - * 4 * x 2 \^\ y 3
+        \paragraph{Notação de Prefixo:} / * 3 x - * 4 * x z \^\ y 3
         \paragraph{Notação de Sufixo:} 3 x * 4 x z * * y 3 \^\ - /
         
         \subsection{}
-        \paragraph{Árvode de Derivação:}
+        \paragraph{Árvore de Derivação:}
             \begin{center}
             \synttree[/ [+ [/ [+ [2] [x]] [y]] [2]] [x]]
             \end{center}
@@ -132,7 +134,7 @@
         \paragraph{Notação de Sufixo:} 2 x + y / 2 + x /
 \pagebreak
         \subsection{}
-        \paragraph{Árvode de Derivação:}
+        \paragraph{Árvore de Derivação:}
             \begin{center}
             \synttree[- [\^ [\^ [\^ [x] [3]] [3]] [3]] [2]]
             \end{center}
