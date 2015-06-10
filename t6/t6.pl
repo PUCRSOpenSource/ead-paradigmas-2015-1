@@ -1,6 +1,6 @@
 %prolog
 
-%ExercÌcio 1
+%Exerc√≠cio 1
 soma([],0).
 soma([X|R],T) :-	soma(R,TR), T is TR + X.
 
@@ -16,32 +16,35 @@ mediaSem2Maiores([_,_| [] ], 0) :- !.
 mediaSem2Maiores([_|[] ], 0) :- !.
 mediaSem2Maiores(L, M) :- msort(L,L1), remove2Ult(L1, L2), media(L2,M).
 
-%ExercÌcio 2
+%Exerc√≠cio 2
 primeiro([F | _], F).
 
 extremos([], []) :- !.
 extremos([_|[]], []) :- !.
 extremos(L, E) :- primeiro(L, P), last(L, U), append([P], [U], E).
 
-%ExercÌcio 3
-%Um meg‚metro tem desregulagem. Uma cronÙmetro apresenta tempo errado. Tremor e
-%tranco indicam desregulagem e tempo errado indica descalibragem. CalibraÁ„o
+%Exerc√≠cio 3
+%Um meg√¢metro tem desregulagem. Uma cron√¥metro apresenta tempo errado. Tremor e
+%tranco indicam desregulagem e tempo errado indica descalibragem. Calibra√ß√£o
 %corrige tempo errado, ajuste fino corrige tremor e alinhamento corrige tranco.
 %Se um equipamento tem um problema e um determinado procedimento elimina este
-%problema, ent„o aquele equipamento necessita do procedimento mencionado. Um
-%procedimento elimina um problema quando este procedimento corrige um indÌcio e
-%este indÌcio indica aquele problema. Um equipamento tem um problema quando este
-%equipamento apresenta um indÌcioe este indÌcio indica aquele problema.
+%problema, ent√£o aquele equipamento necessita do procedimento mencionado. Um
+%procedimento elimina um problema quando este procedimento corrige um ind√≠cio e
+%este ind√≠cio indica aquele problema. Um equipamento tem um problema quando este
+%equipamento apresenta um ind√≠cioe este ind√≠cio indica aquele problema.
 
-tem(meg‚metro, desregulagem).
-apresenta(cronometro, tempoErrado).
+tem(megametro,desregulagem).
 
-indica(tremor, desrregulagem).
-indica(tranco, desrregulagem).
-indica(tempoErrado, descalibragem).
+apresenta(cronometro,tempoErrado).
 
-corrige(calibraÁ„o, tempoErrado).
-corrige(ajusteFino, tremor).
-corrige(alinhamento, tranco).
+indica(tremor,desregulagem).
+indica(tranco,desregulagem).
+indica(tempoErrado,descalibragem).
 
-necessita(Equipamento, Problema) :- !.
+corrige(calibracao,tempoErrado).
+corrige(ajusteFino,tremor).
+corrige(alinhamento,tranco).
+
+elimina(Proc,Prob) :- corrige(Proc, X), indica(X, Prob).
+necessita(Equip,Prob) :- tem(Equip, X), indica(Y, X), corrige(Prob, Y).
+tem(Equip, Prob) :- apresenta(Equip, X), indica(X, Prob).
