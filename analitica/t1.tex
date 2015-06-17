@@ -18,8 +18,6 @@
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 
-\usepackage{lipsum}				% para geração de dummy text
-
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
@@ -29,7 +27,7 @@
 
 \renewcommand*{\backrefalt}[4]{
 	\ifcase #1 %
-		Nenhuma citação no texto.%
+		%Nenhuma citação no texto.%
 	\or
 		Citado na página #2.%
 	\else
@@ -37,7 +35,7 @@
 	\fi}%
 
 \titulo{As superfícies quádricas}
-\autor{Diego P. da Jornada\thanks{diego.jornada@acad.pucrs.br}
+\autor{Diego P. da Jornada\thanks{diego.jornada@acad.pucrs.br}}
 
 \definecolor{blue}{RGB}{41,5,195}
 
@@ -77,8 +75,8 @@
 
 \begin{resumoumacoluna}
     
-	Este artigo descreve elipsóides, hiperbolóides e parabolóides, bem como suas
-	equações e representações.
+	Este trabalho apresenta algumas superfícies quádricas bem como suas
+	definições e representações no $R^3$.
 
  \vspace{\onelineskip}
  
@@ -92,65 +90,47 @@
 		Dentro do escopo da disciplina de \emph{Geometria Analítica} o terceiro
 		trabalho pode ser resumido da seguinte maneira: deve-se descrever as
 		seguintes superfícies:  Elipsóides, Hiperbolóides e Parabolóides. Além
-		das descrições é necessário apresentar 
+		das descrições também serão apresentados exemplos gráficos destas
+		superfícies.
 
-    \section{História}
+		O gráfico de uma equação no $R^3$ é chamado de superfície. Uma
+		superfície quádrica é representada por uma equação do segundo grau, cuja
+		forma geral é $ ax^2 + by^2 + cz^2 + dxy + exz + fyz + gx + hy + iz + j
+		= 0$ onde os coeficientes \emph{a}, \emph{b}, \emph{...} e \emph{j} são
+		números reais de forma que pelo menos um dos coeficientes \emph{a},
+		\emph{b}, \emph{c}, \emph{d}, \emph{e} e \emph{f} é diferente de zero.
 
-%Aqui uma parte veio de: http://pt.wikipedia.org/wiki/JavaScript
-        JavaScript, em 1995, foi desenvolvido por Brendan Eich da NetScape com o nome de Mocha, porém o nome mudou para LiveScript e por fim JavaScript.  A escolha final do nome causou confusão dando a impressão de que a linguagem foi baseada em java, sendo que tal escolha foi caracterizada por muitos como uma estratégia de marketing da Netscape para aproveitar a popularidade do recém-lançado Java. Javascript é uma linguagem normalmente usada para que os \emph{browsers} possam executar scripts na máquina cliente; com isso, por exemplo, uma página \emph{web} pode ter seu conteúdo modificado utilizando estes scripts. 
-    
-        Javascript é um dialeto de ECMAScript e considerada uma linguagem multi-paradigma, tendo funcionalidades os seguintes paradigmas: Imperativo, Orientado a objeto e Funcional.
-   
-    %Aqui veio de http://pt.wingwit.com/P/javascript-programming/91273.html#.VQIdtfmAHaE
-        JavaScript é usado para criar conteúdo web dinâmico e interativo. Tem várias aplicações, incluindo compras pela internet e redes de publicidade.
-    
-    \section{Acessibilidade}
-        Assumindo que o usuário não tenha desabilitado sua execução, pode-se utilizar JavaScript do lado cliente para melhorar a experiência de um usuário com deficiência física ou visual.
-    
-        Leitores de tela utilizados por pessoas cegas ou com visão parcial podem detectar a presença de JavaScript e dessa forma acessar e ler o DOM da página depois que seus scripts foram executados. Nestes casos recomenda-se que o HTML seja o mais conciso, navegável e rico semanticamente possível, tendo a página scripts ou não. Não se recomenda que o código JavaScript de uma página seja totalmente dependente do eventos provenientes do mouse já que usuários que não conseguem ou optam por não usar o mouse não estarão aptos a colher os benefícios de tal código. Da mesma forma, embora hyperlinks e webforms possam ser navegados e operados do teclado, JavaScript voltado para acessibilidade não deve requerer um teclado para acessar tais eventos. JavaScript conta com eventos independentes do dispositivo de usuário tais como onfocus e onchange que são mais recomendados na maioria dos casos.
-    
-        Não se recomenda utilizar JavaScript de um jeito que seja confuso ou desorientador para qualquer usuário da internet. Por exemplo, usar JavaScript para alterar ou desabilitar a funcionalidade normal de um navegador, tal como mudar a forma com que o botão direito ou o evento de atualização funcionam, deve ser evitado. Da mesma forma, eventos de interrupção que o usuário pode não estar ciente reduzem a sensação de controle do usuário, assim como scripts inesperados que mudam o conteúdo da página.
-    
-        Frequentemente o processo de fazer páginas web complexas tão acessíveis quanto possível se transforma em um problema não trivial, onde certas decisões são assunto de debate e opinião. Entretanto, tecnologias assistivas estão constantemente evoluindo e novas recomendações e informações relevantes vem sendo continuamente publicadas na web.
+    \section{Elipsóides}
 
-    \section{Regras Sintáticas}
-        Nesta seção serão descritas as regras sintáticas e, na próxima, as regras semânticas da linguagem\cite{crockford2008javascript}.
+		Um elipsóide é uma superfície descritpa pelo movimento de uma elipse em
+		torno de um eixo. Ao girarmos essa elipse em tonor do eixo $Oy$ obtemos
+		o \emph{elipsóide de revolução}, caso o centro seja a origem então o
+		elipsóide é definido pela seguinte equação:
+
+			$$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$$
+
+		Se o centro de um elipsóide é o ponto \emph{(h, k, l)} e seus eixos
+		forem paralelos aos eixos coordenados a equação é do seguinte
+		formato:
+
+			$$\frac{(x^2-h)}{a^2}+\frac{(y^2-h)}{b^2}+\frac{(z^2-1)}{c^2}=1$$
+
+
+
+	\section{Hiperbolóides} 
+
+	Um hiperbolóide é uma superfície descrita pelo movimento de um segmento de
+	reta em torno de um eixo. Cada ponto deste segmento de reta, quando em
+	movimento gera um curva perpendicular ao eixo de rotação.
+
+	\section{Parabolóides}
+
+	Um parabolóide é uma superfície descrita pelo movimento de uma parábola ao
+	longo de uma curva planar em torno de um eixo de rotação . Uma parábola é
+	uma curva em duas dimensões em que todos os pontos satisfazem a equação
+	$z = ax^2$. Esta parábola é chamada de geratriz da superfície.
+
+	\section{Conclusão}
     
-        Function ::= function [<Name>] ( <Params>* ) <FunctionBody>
-        
-        Params ::=  <Name> , <Params> | <Name>emph  
-        
-        FunctionBody ::= { <Var>* <Statements>* }
-        
-        Statements ::= <Exp> | <Disruptive> |  <If> | <Loop>
-        
-        Loop ::= <While> | <For> | <Do>
-        
-        If ::= if ( <Exp> ) <Block> [<Else>]
-        
-        Else ::= else [<If>] <Block>
-        
-        While::= while ( <Exp> ) <Block>
-        
-        Do ::= do <Block> while ( <Exp> );
-        
-        Block ::= { <Statements> }
-        
-        Var ::= var <Name> [ = <Expression> ];
-        
-    \section{Regras Semânticas}
-        O comando \emph{Function} é usado para definir uma função que executará o \emph{FunctionBody} utilzando parâmetros, se houver, definidos em \emph{Params}.
-        
-        O comando \emph{Var} é utilizado para a definição de variáveis, sendo estas identificadas por um nome, e caso houver necessidade pode ser atribuído um valor, que é construído a partir de uma \emph{Exp}, que por sua vez é utilizado para que seja definido um valor de forma direta, podendo ser número, string ou booleano. \emph{Exp} também pode ser usada no comando \emph{If} que avalia uma \emph{Exp} e determina se \emph{Block} será executado.
-        
-        \emph{Else} é um comando que quando usado após um \emph{If}, que caso a \emph{Exp} a ser avaliada não seja verdadeira o \emph{Block} do \emph{Else} será executado.
-        
-        Em \emph{Javascript} existem comandos de repetição, \emph{While} verifica se \emph{Exp} é verdadeira e então executa \emph{Block}, enquanto \emph{Do} verifica se \emph{Exp} continua verdadeira após a executção de \emph{Block.}
-        
-    \section{Conclusão}
-    
-    Javascript é uma linguagem importante, pois pode ser usado para facilitar a usabilidade e a interativade de um determinada página. Já para desenvolvedores \emph{Javascript} por ter elementos do paradigma funcional se mostra muito expressiva possibilitando que sejam escritos códigos menos densos. Por ser multi-paradigma é um linguagem que permite a construção na forma em que o desenvolvedor mais se adapta.
-    
-    \bibliography{bib}
-    %\cite{crockford2008javascript}
-\end{document}
+	\bibliography{bib} \nocite{boulos1997} \nocite{winterle2000vetores}
+	\end{document}
