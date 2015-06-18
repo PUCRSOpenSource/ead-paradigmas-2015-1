@@ -1,0 +1,142 @@
+
+\documentclass[
+	article,			% indica que é um artigo acadêmico
+	11pt,				% tamanho da fonte
+	oneside,			% para impressão apenas no verso. Oposto a twoside
+	a4paper,			% tamanho do papel. 
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+
+\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+
+\renewcommand{\backref}{}
+
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		%Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+
+\titulo{As superfícies quádricas}
+\autor{Diego P. da Jornada\thanks{diego.jornada@acad.pucrs.br}}
+
+\definecolor{blue}{RGB}{41,5,195}
+
+\makeatletter
+\hypersetup{
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={Modelo de artigo científico com abnTeX2},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+\makeindex
+
+\setlrmarginsandblock{4cm}{4cm}{*}
+\setulmarginsandblock{4cm}{4cm}{*}
+\checkandfixthelayout
+
+\setlength{\parindent}{1.3cm}
+
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+\SingleSpacing
+
+\begin{document}
+
+\frenchspacing 
+
+\maketitle
+
+\begin{resumoumacoluna}
+    
+		Este trabalho apresenta algumas superfícies quádricas bem como suas
+		definições e representações no $R^3$.
+
+ \vspace{\onelineskip}
+ 
+ \noindent
+\end{resumoumacoluna}
+
+\textual
+
+    \section*{Introdução}
+
+		Dentro do escopo da disciplina de \emph{Geometria Analítica} o terceiro
+		trabalho pode ser resumido da seguinte maneira: deve-se descrever as
+		seguintes superfícies:  Elipsóides, Hiperbolóides e Parabolóides. Além
+		das descrições também serão apresentados exemplos gráficos destas
+		superfícies.
+
+		O gráfico de uma equação no $R^3$ é chamado de superfície. Uma
+		superfície quádrica é representada por uma equação do segundo grau, cuja
+		forma geral é $ ax^2 + by^2 + cz^2 + dxy + exz + fyz + gx + hy + iz + j
+		= 0$ onde os coeficientes \emph{a}, \emph{b}, \emph{...} e \emph{j} são
+		números reais de forma que pelo menos um dos coeficientes \emph{a},
+		\emph{b}, \emph{c}, \emph{d}, \emph{e} e \emph{f} é diferente de zero.
+
+    \section{Elipsóides}
+
+		Um elipsóide é uma superfície descritpa pelo movimento de uma elipse em
+		torno de um eixo, tendo \emph{a, b} e \emph{c} como medidas dos semi
+		eixos. Ao girarmos essa elipse em tonor do eixo $Oy$ obtemos o
+		\emph{elipsóide de revolução}, caso o centro seja a origem então o
+		elipsóide é definido pela seguinte equação:
+
+			$$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$$
+
+		Se o centro de um elipsóide é o ponto \emph{(h, k, l)} e seus eixos
+		forem paralelos aos eixos coordenados a equação é do seguinte formato:
+
+			$$\frac{(x^2-h)}{a^2}+\frac{(y^2-h)}{b^2}+\frac{(z^2-1)}{c^2}=1$$
+
+		A equação paramétrica de um elipsóide pode ser escrito da seguinte
+		maneira:
+		
+
+
+	\section{Hiperbolóides} 
+
+		Um hiperbolóide é uma superfície descrita pelo movimento de um segmento de
+		reta em torno de um eixo. Cada ponto deste segmento de reta, quando em
+		movimento gera um curva perpendicular ao eixo de rotação.
+
+	\section{Parabolóides}
+
+		Um parabolóide é uma superfície descrita pelo movimento de uma parábola ao
+		longo de uma curva planar em torno de um eixo de rotação . Uma parábola é
+		uma curva em duas dimensões em que todos os pontos satisfazem a equação $z =
+		ax^2$. Esta parábola é chamada de geratriz da superfície.
+
+	\section{Conclusão}
+    
+	\bibliography{bib}
+
+	\nocite{boulos1997}
+	\nocite{winterle2000vetores}
+	\end{document}
