@@ -33,8 +33,6 @@ extremos(L, E) :- primeiro(L, P), last(L, U), append([P], [U], E).
 %este indício indica aquele problema. Um equipamento tem um problema quando este
 %equipamento apresenta um indícioe este indício indica aquele problema.
 
-tem(megametro,desregulagem).
-
 apresenta(cronometro,tempoErrado).
 
 indica(tremor,desregulagem).
@@ -47,4 +45,6 @@ corrige(alinhamento,tranco).
 
 elimina(Proc,Prob) :- corrige(Proc, X), indica(X, Prob).
 necessita(Equip,Prob) :- tem(Equip, X), indica(Y, X), corrige(Prob, Y).
+
+tem(megametro,desregulagem).
 tem(Equip, Prob) :- apresenta(Equip, X), indica(X, Prob).
