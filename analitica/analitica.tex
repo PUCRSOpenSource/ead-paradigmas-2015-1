@@ -17,10 +17,12 @@
 \usepackage{nomencl} 			% Lista de simbolos
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{amsmath}
 
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
+\graphicspath{{./img/}}
 \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 
 \renewcommand{\backref}{}
@@ -104,39 +106,82 @@
 
 		Um elipsóide é uma superfície descritpa pelo movimento de uma elipse em
 		torno de um eixo, tendo \emph{a, b} e \emph{c} como medidas dos semi
-		eixos. Ao girarmos essa elipse em tonor do eixo $Oy$ obtemos o
-		\emph{elipsóide de revolução}, caso o centro seja a origem então o
-		elipsóide é definido pela seguinte equação:
+		eixos. Ao girarmos essa elipse em tonor do eixo $Oy$, por exemplo,
+		obtemos o \emph{elipsóide de revolução}, caso o centro seja a origem
+		então o elipsóide é definido pela Equação ~\ref{elip:geral}.
 
-			$$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$$
+		\begin{equation}\label{elip:geral}
+			\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1
+		\end{equation}
 
-		Se o centro de um elipsóide é o ponto \emph{(h, k, l)} e seus eixos
-		forem paralelos aos eixos coordenados a equação é do seguinte formato:
+		Na Equação \ref{elip:geral} \emph{a, b} e \emph{c}, são os tamanhos dos
+		semi eixos. Se o centro de um elipsóide é o ponto \emph{(h, k, l)} e
+		seus eixos forem paralelos aos eixos coordenados pela Equação
+		~\ref{elip:desloc}.
 
-			$$\frac{(x^2-h)}{a^2}+\frac{(y^2-h)}{b^2}+\frac{(z^2-1)}{c^2}=1$$
+		\begin{equation}\label{elip:desloc}
+			\frac{(x^2-h)}{a^2}+\frac{(y^2-h)}{b^2}+\frac{(z^2-1)}{c^2}=1
+		\end{equation}
 
-		A equação paramétrica de um elipsóide pode ser escrito da seguinte
-		maneira:
+
+		\subsection{Equação Pamétrica}
+
+		A Equação paramétrica do elipsóide pode ser observado na Equação
+		~\ref{elip:param}. foram definidos intervalo a \emph{u} e \emph{v} para
+		serem usados na representação do elipsóide no $R^3$.
 		
+		\begin{equation}\label{elip:param}
+			\begin{cases}
+				x = a\ cos(u) sen(v) &~\\
+				y = b\ cos(u) sen(v) &~\\
+				z = c\ cos(v) 
+			\end{cases}
+		\end{equation}
 
+
+		Na Figura~\ref{img:elip} pode ser observado um elipsóide gerado a partir
+		da Equação~\ref{elip:param}, de forma que $u\in[-\pi,\pi]$ e
+		$v\in[-\frac{\pi}{2}, \frac{\pi}{2}]$.
+
+		\begin{figure}[!htb]
+			\includegraphics[width=\textwidth,keepaspectratio]{ellipsoid.png}
+			\caption{Elipsóide}
+			\label{img:elip}
+		\end{figure}
 
 	\section{Hiperbolóides} 
 
-		Um hiperbolóide é uma superfície descrita pelo movimento de um segmento de
-		reta em torno de um eixo. Cada ponto deste segmento de reta, quando em
-		movimento gera um curva perpendicular ao eixo de rotação.
+		Um hiperbolóide é uma superfície que poder ter uma ou duas folhas. O
+		hiperbolóide de uma folha é obtido rotcaionando uma hiperbole em torno
+		do foco. A Equação~\ref{hip:geral} que representa o hiperbolóide de uma
+		folha quando seu centro é a origem.
+
+		\begin{equation}\label{hip:geral}
+			\frac{x^2}{a^2}+\frac{y^2}{a^2}-\frac{z^2}{c^2}=1
+		\end{equation}
+
+		\begin{figure}[!htb]
+			\includegraphics[width=\textwidth,keepaspectratio]{hyperboloid.png}
+			\caption{Hiperbolóide}
+			\label{img:hip}
+		\end{figure}
 
 	\section{Parabolóides}
 
-		Um parabolóide é uma superfície descrita pelo movimento de uma parábola ao
-		longo de uma curva planar em torno de um eixo de rotação . Uma parábola é
-		uma curva em duas dimensões em que todos os pontos satisfazem a equação $z =
-		ax^2$. Esta parábola é chamada de geratriz da superfície.
+		Um parabolóide é uma superfície descrita pelo movimento de uma parábola
+		ao longo de uma curva planar em torno de um eixo de rotação . Uma
+		parábola é uma curva em duas dimensões em que todos os pontos satisfazem
+		a equação $z = ax^2$. Esta parábola é chamada de geratriz da superfície.
+
+				\begin{figure}[!htb]
+					\includegraphics[width=\textwidth,keepaspectratio]{paraboloid.png}
+					\caption{Hiperbolóide}
+					\label{img:parab}
+				\end{figure}
 
 	\section{Conclusão}
     
 	\bibliography{bib}
 
-	\nocite{boulos1997}
 	\nocite{winterle2000vetores}
 	\end{document}
