@@ -18,6 +18,8 @@
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{amsmath}
+\usepackage{float}
+\usepackage{amssymb}
 
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
@@ -104,7 +106,7 @@
 
     \section{Elipsóides}
 
-		Um elipsóide é uma superfície descritpa pelo movimento de uma elipse em
+		Um elipsóide é uma superfície descrita pelo movimento de uma elipse em
 		torno de um eixo, tendo \emph{a, b} e \emph{c} como medidas dos semi
 		eixos. Ao girarmos essa elipse em tonor do eixo $Oy$, por exemplo,
 		obtemos o \emph{elipsóide de revolução}, caso o centro seja a origem
@@ -126,9 +128,9 @@
 
 		\subsection{Equação Pamétrica}
 
-		A Equação paramétrica do elipsóide pode ser observado na Equação
-		~\ref{elip:param}. foram definidos intervalo a \emph{u} e \emph{v} para
-		serem usados na representação do elipsóide no $R^3$.
+		A Equação paramétrica do elipsóide pode ser observado na
+		Equação~\ref{elip:param}. foram definidos intervalo a \emph{u} e
+		\emph{v} para serem usados na representação do elipsóide no $R^3$.
 		
 		\begin{equation}\label{elip:param}
 			\begin{cases}
@@ -139,11 +141,13 @@
 		\end{equation}
 
 
+		\subsection{Representação}
+
 		Na Figura~\ref{img:elip} pode ser observado um elipsóide gerado a partir
 		da Equação~\ref{elip:param}, de forma que $u\in[-\pi,\pi]$ e
 		$v\in[-\frac{\pi}{2}, \frac{\pi}{2}]$.
 
-		\begin{figure}[!htb]
+		\begin{figure}[H]
 			\includegraphics[width=\textwidth,keepaspectratio]{ellipsoid.png}
 			\caption{Elipsóide}
 			\label{img:elip}
@@ -152,15 +156,58 @@
 	\section{Hiperbolóides} 
 
 		Um hiperbolóide é uma superfície que poder ter uma ou duas folhas. O
-		hiperbolóide de uma folha é obtido rotcaionando uma hiperbole em torno
-		do foco. A Equação~\ref{hip:geral} que representa o hiperbolóide de uma
+		hiperbolóide de uma folha é obtido rotacionando uma hiperbole
+		perpendicular ao foco, enquanto o o de duas folhas é botido apartir da
+		rotação paralela a uma reta que passa pelo foco.
+
+		\subsection{Hiperbolóide de uma folha}
+
+		A Equação~\ref{hipum:geral} que representa o hiperbolóide de uma
 		folha quando seu centro é a origem.
 
-		\begin{equation}\label{hip:geral}
+		\begin{equation}\label{hipum:geral}
 			\frac{x^2}{a^2}+\frac{y^2}{a^2}-\frac{z^2}{c^2}=1
 		\end{equation}
 
-		\begin{figure}[!htb]
+
+		A Equação~\ref{hipum:param} é a definição paramétrica do hiperbolóide
+		de uma folha.
+
+		\begin{equation}\label{hipum:param}
+			\begin{cases}
+				x = a\ \sqrt{1 + u^2} cos v~\\
+				y = a\ \sqrt{1 + u^2} sen v~\\
+				z = cu
+			\end{cases}
+		\end{equation}
+
+		\subsection{Hiperbolóide de duas folhas}
+
+		A Equação~\ref{hipdois:geral} que representa o hiperbolóide de duas
+		folhas quando seu centro é a origem.
+
+		\begin{equation}\label{hipdois:geral}
+			\frac{x^2}{a^2}+\frac{y^2}{a^2}-\frac{z^2}{c^2}=-1
+		\end{equation}
+
+
+		A Equação~\ref{hipdois:param} é a definição paramétrica do hiperbolóide
+		de duas folhas.
+
+		\begin{equation}\label{hipdois:param}
+			\begin{cases}
+				x = a\ sin(h)\ u cos(v)&~\\
+				y = a\ sin(h)\ u sen(v)&~\\
+				z = c\ cos(h) u~\\
+			\end{cases}
+		\end{equation}
+
+		\subsection{Representação}
+
+		A Figure~\ref{img:hip} apresenta um hiperbolóide de uma folha construido a partir da
+		equação, onde $u \in[-\pi:\pi]$ e $v\in\mathbb{R}$.
+
+		\begin{figure}[H]
 			\includegraphics[width=\textwidth,keepaspectratio]{hyperboloid.png}
 			\caption{Hiperbolóide}
 			\label{img:hip}
@@ -171,17 +218,30 @@
 		Um parabolóide é uma superfície descrita pelo movimento de uma parábola
 		ao longo de uma curva planar em torno de um eixo de rotação . Uma
 		parábola é uma curva em duas dimensões em que todos os pontos satisfazem
-		a equação $z = ax^2$. Esta parábola é chamada de geratriz da superfície.
+		a equação $z = b(x+y)^2$. Esta parábola é chamada de geratriz da
+		superfície. A equação paramétrica do parabolóide está definido na
+		Equação ~\ref{parab:param}
 
-				\begin{figure}[!htb]
+		\begin{equation}\label{parab:param}
+			\begin{cases}
+				x = a\ \sqrt{\frac{u}{h}} cos v~\\
+				y = a\ \sqrt{\frac{u}{h}} sen v~\\
+				z = u
+			\end{cases}
+		\end{equation}
+
+		\subsection{Representação}
+
+		Na figura ~\ref{img:parab} é possível visualizar um parabolóide gerado a
+		partir da Equação $x^2 + y^2$,onde $x \in[-2:2], y\in[-2:2]$.
+				\begin{figure}[H]
 					\includegraphics[width=\textwidth,keepaspectratio]{paraboloid.png}
-					\caption{Hiperbolóide}
+					\caption{Parabolóide}
 					\label{img:parab}
 				\end{figure}
 
-	\section{Conclusão}
-    
 	\bibliography{bib}
-
 	\nocite{winterle2000vetores}
+	\nocite{abbena2006modern}
+	\nocite{hilbert1999geometry}
 	\end{document}
