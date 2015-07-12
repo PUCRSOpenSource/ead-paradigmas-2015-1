@@ -80,7 +80,7 @@ filial(2, 160).
  ```
 
 Opções do menu 
-=================
+-----------------
 
 1. Cadastrar filial
 
