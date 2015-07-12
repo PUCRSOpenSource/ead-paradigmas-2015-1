@@ -32,7 +32,6 @@ venda(0,0).
 envio(0,0,0).
  ```
 
-
 Este termos devem ser lidos no início, antes de ser apresentado o menu. Eles
 vão sendo ampliados à medida que ocorram  cadastros de filiais(filial) e
 compras(compra ), vendas(venda) e envios(envio) de produto . Por
@@ -44,6 +43,7 @@ bules , devem ser incluídos os termos
 filial(1, 240).
 filial(2, 100).
  ```
+
 Se houver uma compra de 100 bules n a filial com código 1, deve ser incluído o
 termo
 
