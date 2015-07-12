@@ -47,7 +47,7 @@ Enunciado T6
    ```
 Na base Prolog construída não são permitidos os fatos:
 
-	``
+	```prolog
 	elimina(calibração,descalibragem).
 	elimina(ajustefino,desregulagem).
 	elimina(alinhamento,desregulagem).
@@ -55,4 +55,4 @@ Na base Prolog construída não são permitidos os fatos:
 	necessita(megâmetro,ajusteFino).
 	necessita(megâmetro,alinhamento).
 	necessita(cronômetro,calibração).
-	``
+	```
