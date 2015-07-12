@@ -84,63 +84,63 @@ Opções do menu
 
 1. Cadastrar filial
 
-Caso o usuário escolha a opção 1 (menu	inicial) , deve ser solicitado um
-código de filial e um estoque inicial. Se um a filial com aquele código não
-existir, deve ser criad a um a filial com aquele código e aquele estoque .
-Caso contrário, o usuário deve ser informado que não houve o cadastro.
+	Caso o usuário escolha a opção 1 (menu	inicial) , deve ser solicitado um
+	código de filial e um estoque inicial. Se um a filial com aquele código não
+	existir, deve ser criad a um a filial com aquele código e aquele estoque .
+	Caso contrário, o usuário deve ser informado que não houve o cadastro.
 
 2. Compra
 
-Caso o usuário escolha a opção 2(menu inicial), deve ser solicitado o código
-da filial e a compra(quantidade de bules a incluir no estoque desta filial).
-Se existir a filial, deve ser registrada a compra	e atualizado o estoque
-da filial.Caso contrário, o usuário deve ser informado que não houve a
-compra.
+	Caso o usuário escolha a opção 2(menu inicial), deve ser solicitado o código
+	da filial e a compra(quantidade de bules a incluir no estoque desta filial).
+	Se existir a filial, deve ser registrada a compra	e atualizado o estoque
+	da filial.Caso contrário, o usuário deve ser informado que não houve a
+	compra.
 
 3. Venda
 
-Caso o usuário escolha a opção 3(menu inicial), deve ser solicitado o código
-da filial e a venda(quantidade de bules a retirar do estoque desta
-filial).Se existir a filial e houver estoque suficiente, deve ser registrada
-a venda e atualizado o  estoque da filial. Caso contrário, o usuário deve
-ser informado que não houve a venda e a razão.
+	Caso o usuário escolha a opção 3(menu inicial), deve ser solicitado o código
+	da filial e a venda(quantidade de bules a retirar do estoque desta
+	filial).Se existir a filial e houver estoque suficiente, deve ser registrada
+	a venda e atualizado o  estoque da filial. Caso contrário, o usuário deve
+	ser informado que não houve a venda e a razão.
 
 4. Envio
 
-Caso o usuário escolha a opção 4(menu inicial), deve ser solicitado o código
-da filial de origem do envio, o código da filial que irá receber os bules e
-a quantidade de bules a enviar. Existindo as duas filiais e sendo o estoque
-da filial de origem suficiente, deve ser registrado o envio e atualizados os
-respectivos estoques. Caso contrário, o usuário deve ser informado que não
-houve o envio e a razão. Atenção: um envio é efetivado realizando-se
-simultaneamente uma venda da filial de origem e uma compra da filial de
-destino para que o controle de estoque seja viabilizado 
+	Caso o usuário escolha a opção 4(menu inicial), deve ser solicitado o código
+	da filial de origem do envio, o código da filial que irá receber os bules e
+	a quantidade de bules a enviar. Existindo as duas filiais e sendo o estoque
+	da filial de origem suficiente, deve ser registrado o envio e atualizados os
+	respectivos estoques. Caso contrário, o usuário deve ser informado que não
+	houve o envio e a razão. Atenção: um envio é efetivado realizando-se
+	simultaneamente uma venda da filial de origem e uma compra da filial de
+	destino para que o controle de estoque seja viabilizado 
 
 5. Estoque
 
-Caso o usuário escolha a opção 5 (menu inicial) , deve ser solicitado o
-código da filial e informado o seu estoque , se a filial existir. Se não
-existir a filial, o usuário deve ser informado.
+	Caso o usuário escolha a opção 5 (menu inicial) , deve ser solicitado o
+	código da filial e informado o seu estoque , se a filial existir. Se não
+	existir a filial, o usuário deve ser informado.
 
 6. Balanço
 
-Caso o usuário escolha a opção 6 (menu inicial) , deve ser solicitado o código
-da filial e informado o seu estoque , as compras, as vendas e as envios
-relacionados a esta filial(em qualquer ordem). Se não existir a filial, o
-usuário deve ser informado
+	Caso o usuário escolha a opção 6 (menu inicial) , deve ser solicitado o código
+	da filial e informado o seu estoque , as compras, as vendas e as envios
+	relacionados a esta filial(em qualquer ordem). Se não existir a filial, o
+	usuário deve ser informado
 
 7. Análise
 
-Caso o usuário escolha a opção 7 (menu inicial), deve ser apresentado o seguinte menu para as atividades de análise : 
+	Caso o usuário escolha a opção 7 (menu inicial), deve ser apresentado o seguinte menu para as atividades de análise : 
 
-[1] Estoque médio da empresa, considerando os estoques de todas as filiais  
-[2] Códigos e estoques das filiais com estoque maior que um dado valor  
-[3] Diferença (total das compras menos total das vendas) em toda a empresa  
-[4] Estoque total da empresa , considerando os estoques de todas as filiais  
-[5] Voltar
+	[1] Estoque médio da empresa, considerando os estoques de todas as filiais  
+	[2] Códigos e estoques das filiais com estoque maior que um dado valor  
+	[3] Diferença (total das compras menos total das vendas) em toda a empresa  
+	[4] Estoque total da empresa , considerando os estoques de todas as filiais  
+	[5] Voltar
 
-Para cada opção que o usuário escolher deve ser apresentada na tela a
-informação correspondente. Se o usuário escolher a opção 2, deve ser
-solicitado um valor(quantidade de bules). As filiais apresentadas devem ter
-estoque maior que o valor informado. Se o usuário escolher a opção 5, deve
-ser apresentado o menu inicial.
+	Para cada opção que o usuário escolher deve ser apresentada na tela a
+	informação correspondente. Se o usuário escolher a opção 2, deve ser
+	solicitado um valor(quantidade de bules). As filiais apresentadas devem ter
+	estoque maior que o valor informado. Se o usuário escolher a opção 5, deve
+	ser apresentado o menu inicial.
