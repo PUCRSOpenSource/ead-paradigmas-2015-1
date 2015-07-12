@@ -1,20 +1,20 @@
 %prolog
 :-
 	nl,
-	write('+------------------------------------------+'),nl,
-	write('| Paradigmas das Linguagens de Programação |'),nl,
-	write('|           Semestre: 2015/1               |'),nl,
-	write('|     Alunos: Diego Pinto da Jornada       |'),nl,
-	write('|                       e                  |'),nl,
-	write('|           Milton Caetano De Oliveira     |'),nl,
-	write('+------------------------------------------+'),nl,
-	write('+==================INSTRUÇÕES DE USO========================+'), nl,
-	write('|      Cadastro e movimentação de bules na UmNoveNove       |'), nl,
-	write('|      Para executar a primeira vez, digite na consulta:    |'), nl,
-	write('|                     ?- inicio.                            |'), nl,
-	write('| Para executar a segunda vez em diante, digite na consulta:|'), nl,
-	write('|                     ?- controle.                          |'), nl,
-	write('+===========================================================+'), nl.
+	write('+------------------------------------------------------------+'),nl,
+	write('|          Paradigmas das Linguagens de Programação          |'),nl,
+	write('|                       Semestre: 2015/1                     |'),nl,
+	write('|                 Alunos: Diego Pinto da Jornada             |'),nl,
+	write('|                                   e                        |'),nl,
+	write('|                       Milton Caetano De Oliveira           |'),nl,
+	write('+------------------------------------------------------------+'),nl,
+	write('+==================INSTRUÇÕES DE USO=========================+'), nl,
+	write('|      Cadastro e movimentação de bules na UmNoveNove        |'), nl,
+	write('|      Para executar a primeira vez, digite na consulta:     |'), nl,
+	write('|                     ?- inicio.                             |'), nl,
+	write('| Para executar a segunda vez em diante, digite na consulta: |'), nl,
+	write('|                     ?- controle.                           |'), nl,
+	write('+============================================================+'), nl.
 
 :- dynamic filial/2.	
 :- dynamic compra/2.
@@ -52,8 +52,8 @@ controle :-
 	write('===================================='), nl,
 	write('[1] Cadastrar filial'), nl,
 	write('[2] Comprar'), nl,
-	write('[3] Vender'), nl,
-	write('[4] Enviar'), nl,
+	write('[3] Vender'),  nl,
+	write('[4] Enviar'),  nl,
 	write('[5] Estoque'), nl,
 	write('[6] Balanço'), nl,
 	write('[7] Análise'), nl,
@@ -61,86 +61,149 @@ controle :-
 	write('Informe a operação: '),
 	read(Op),
 	write('===================================='), nl,
-	executa(Op), 
-	controle.
+	executa(Op),!. 
 
 executa(1) :-
-	write('Informe o código da filial'), nl,
-	read(C), nl,
-	write('Informe o estoque inicial'), nl,
-	read(E), nl,
+	write('Informe o código da filial: '),read(C), nl,
+	write('Informe o estoque inicial: '), read(E), nl,
 	not(filial(C,_)),
 	(
-		assert(filial(C, E)), nl,
+		assert(filial(C, E)),
 		write('Filial Cadastrada com Sucesso.'), nl,
-		!
+		controle
 	)
 	|
-	write('Filial Já Cadastrada'), nl.
+	write('Filial Já Cadastrada'), nl, controle.
 	
 executa(2) :-
-	write('Informe o código da filial'), nl,
-	read(C), nl,
-	write('Informe a quantidade de bules a serem compradas'), nl,
-	read(Q), nl,
+	write('Informe o código da filial: '), read(C), nl,
+	write('Informe a quantidade de bules a serem compradas: '), read(Q), nl,
 	filial(C,_),
 	(
-		filial(C,A), E is A + Q,
+		assert(compra(C,Q)),
+		filial(C,A), 
+		E is A + Q,
 		retract(filial(C,A)),
 		assert(filial(C,E)),
-		write('Compra realizada com sucesso'), nl,!
+		write('Compra realizada com sucesso'), nl, controle
 	)
 	|
-	write('Filial Não Cadastrada!'), nl,!.
+	write('Filial Não Cadastrada!'), nl, controle.
 
 executa(3) :-
-	write('Informe o código da filial'), nl,
-	read(C), nl,
-	write('Informe a quantidade de bules a serem vendidas'), nl,
-	read(Q), nl,
+	write('Informe o código da filial: '), read(C), nl,
+	write('Informe a quantidade de bules a serem vendidas: '), read(Q), nl,
 	filial(C,_),
 	(
+		assert(venda(C,Q)),
 		filial(C,A), E is A - Q,
 		retract(filial(C,A)),
 		assert(filial(C,E)),
-		write('Venda realizada com sucesso'), nl,!
+		write('Venda realizada com sucesso'), nl, controle
 	)
 	|
-	write('Filial Não Cadastrada!'), nl,!.
+	write('Filial Não Cadastrada!'), nl, controle.
 
 executa(4) :-
-	write('Ainda não é possível enviar bules'), nl,
-	write('Informe o código da filial de origem do envio'), nl,
-	read(CodigoFilialOrigem), nl,
-    write('Informe o código da filial de destino do envio'), nl,
-	read(CodigoFilialDestino), nl,
-	write('Informe a quantidade de bules a serem enviadas'), nl,
-	read(QuantBulesEnviadas), nl,
-	envio(CodigoFilialOrigem,CodigoFilialDestino,QuantBulesEnviadas), nl,
-	controle.
+	write('Informe o código da filial de origem do envio: '),  read(Origem),  nl,
+    write('Informe o código da filial de destino do envio: '), read(Destino), nl,
+	write('Informe a quantidade de bules a serem enviadas: '), read(Quantia), nl,
+	filial(Origem,_),filial(Destino,_),
+	(
+		assert(envio(Origem, Destino, Quantia)),
+		retract(filial(Origem,OrigemQ)),
+		retract(filial(Destino, DestinoQ)),
+		QOrigem  is OrigemQ-Quantia,
+		QDestino is DestinoQ+Quantia,
+		assert(filial(Origem, QOrigem)),
+		assert(filial(Destino, QDestino)),
+		write('Envio realizado com sucesso'), nl, controle
+	)
+	|
+	write('Filial de destino ou de origem não cadastrada!'), nl, controle.
 
 executa(5) :-
-	write('Ainda não é possível verificar estoque'), nl,
-	write('Informe o código da filial'), nl,
-	read(CodigoFilial), nl,
-	controle.
+	write('Informe o código da filial: '), read(C), nl,
+	filial(C,_),
+	(
+		filial(C,E),
+		write('O Estoque da Filial '),
+		write(C), write(' é: '), write(E), nl, controle
+	)
+	|
+	write('Filial não cadastrada'), nl, controle.
 
 executa(6) :-
-	write('Ainda não é possível apresentar balanço'), nl,
-	write('Informe o código da filial'), nl,
-	read(CodigoFilial), nl,
-
-	controle.
+	write('Informe o código da filial: '), read(C), nl,
+	filial(C,_),
+	(
+		filial(C,E),
+		findall(vendeu(X), venda(C,X),Vendeu),
+		findall(comprou(X), compra(C,X),Comprou),
+		findall(recebeu(F,X), envio(F,C,X),Recebeu),
+		findall(enviou(F,X), envio(C,F,X),Enviou),
+		write('O Estoque da Filial '),
+		write(C), write(' é: '), write(E), nl,
+		write('=============================='),nl,
+		write('------------Vendas------------'),nl,
+		write(Vendeu),nl,
+		write('=============================='),nl,
+		write('------------Compras-----------'),nl,
+		write(Comprou),nl,
+		write('=============================='),nl,
+		write('-Recebimentos(DeQuem, Quanto)-'),nl,
+		write(Recebeu),nl,
+		write('=============================='),nl,
+		write('----Envios(PraQuem,Quanto)----'),nl,
+		write(Enviou),nl,
+		write('=============================='),nl, controle
+	)
+	|
+	write('Filial não cadastrada'), nl, controle.
 
 executa(7) :-
 	analisa.
 
 executa(0) :-
-	write('Só é possível sair, mas ainda não é possível gravar'), nl, !.
+	write('Informe o nome do arquivo entre apóstrofos: '),read(File),nl,
+	open(File,write,Stream),
+	forall(
+			filial(C,E),
+			(
+				writeq(Stream,filial(C,E)),
+				put(Stream,'.'),
+				nl(Stream)
+			)
+		),
+	forall(
+			compra(C,E),
+			(
+				writeq(Stream,filial(C,E)),
+				put(Stream,'.'),
+				nl(Stream)
+			)
+		),
+	forall(
+			venda(C,E),
+			(
+				writeq(Stream,filial(C,E)),
+				put(Stream,'.'),
+				nl(Stream)
+			)
+		),
+	forall(
+			envio(O, D, Q),
+			(
+				writeq(Stream,envio(O, D, Q)),
+				put(Stream,'.'),
+				nl(Stream)
+			)
+		),
+	close(Stream), !.
 
 executa(_) :- 
 	write('Operação inexistente'),
-	nl.
+	nl, controle.
 
 analisa :-
 	write('===================================='), nl,
@@ -156,19 +219,26 @@ analisa :-
 	analisa(Op), !.
 
 analisa(1) :- % Média
-	write('Ainda não é possível calcular a média'), nl,
+	findall(Estoque,filial(_,Estoque),L),media(L,M),
+	write('A média é: '),write(M), nl,
 	analisa.
 
 analisa(2) :- % Códigos e estoques das filiais com estoque maior que um dado valor
-	write('Ainda não é possível ver códigos e estoques das filiais com estoque maior que um dado valor'), nl,
+	write('Informe Valor: '), read(V), nl,
+	findall(filial(F,T),(filial(F,T), T>V),L),
+	write(L),nl,
 	analisa.
 
 analisa(3) :- % Diferença (total dos compras menos total dos vendas)
-	write('Ainda não é possível calcular esta diferença'), nl,
+	findall(C,compra(_,C),L),soma(L,Compra),
+	findall(V,venda(_,V),L),soma(L,Venda),
+	Dif is Compra - Venda,
+	write('Diferença: '), write(Dif), nl,
 	analisa.
 
 analisa(4) :- % Estoque total
-	write('Ainda não á possível calcular o estoque total'), nl,
+	findall(Estoque,filial(_,Estoque),L),soma(L,S),
+	write('Estoque total: '),write(S), nl,
 	analisa.
 
 analisa(0) :- % Voltar
@@ -178,3 +248,6 @@ soma([],0).
 soma([C|R],Total) :-
 	soma(R,TR),
 	Total is C + TR.
+
+media([],0) :- !.
+media(L,M) :- soma(L,S), length(L,T), M is S / T.
