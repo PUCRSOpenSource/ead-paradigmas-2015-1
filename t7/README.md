@@ -11,9 +11,9 @@ Enunciado T7
  “controla” apresenta o seguinte menu  inicial :
 
  [1]  Cadastro de filial \s\s
- [2]  Compra de  produto \s\s
- [3]  Venda de  produto \s\s
- [4]  Envio de  produto \s\s
+ [2]  Compra de produto \s\s
+ [3]  Venda de produto \s\s
+ [4]  Envio de produto \s\s
  [5]  Estoque \s\s
  [6]  Balanço \s\s
  [7] Análise \s\s
