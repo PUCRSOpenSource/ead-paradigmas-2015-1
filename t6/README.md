@@ -10,8 +10,6 @@ Enunciado T6
    ?- mediaListaDescarta2Maiores([1,5,2,7,3],M).
    M = 2.
    ```
-
-
 2. Dada uma lista L, constitui-se a lista R somente dos dois elementos extremos
    (o primeiro e o último) de L. Se L tiver menos de dois elementos R será
    vazia.  Exemplo de consulta:
@@ -31,27 +29,25 @@ Enunciado T6
    indica aquele problema.
 
    ```prolog
-   ?- tem(cronômetro,Oque).
+   ?- tem(cronometro,Oque).
    Oque = descalibragem.
 
-   ?-necessita(megâmetro,Oque).
+   ?-necessita(megametro,Oque).
    Oque = ajusteFino ;
    Oque = alinhamento ;
    false.
 
    ?-elimina(Procedimento,Problema).
-   Procedimento = calibração,
+   Procedimento = calibracao,
    Problema = descalibragem ;
    Procedimento = ajusteFino,
    Problema = desregulagem ;
    Procedimento = alinhamento,
    Problema = desregulagem.
    ```
-
-
 Na base Prolog construída não são permitidos os fatos:
 
-	```prolog
+	``
 	elimina(calibração,descalibragem).
 	elimina(ajustefino,desregulagem).
 	elimina(alinhamento,desregulagem).
@@ -59,5 +55,4 @@ Na base Prolog construída não são permitidos os fatos:
 	necessita(megâmetro,ajusteFino).
 	necessita(megâmetro,alinhamento).
 	necessita(cronômetro,calibração).
-	```
-
+	``
