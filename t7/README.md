@@ -133,7 +133,7 @@ Enunciado T7
 	[1] Estoque médio da empresa, considerando os estoques de todas as filiais  
 	[2] Códigos e estoques das filiais com estoque maior que um dado valor  
 	[3] Diferença (total das compras menos total das vendas) em toda a empresa  
-	[4] Estoque total da empresa , considerando os estoques de todas as filiais 
+	[4] Estoque total da empresa , considerando os estoques de todas as filiais  
 	[5] Voltar
 
 	Para cada opção que o usuário escolher deve ser apresentada na tela a
