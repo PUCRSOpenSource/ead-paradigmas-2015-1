@@ -78,7 +78,7 @@ Enunciado T7
 	filial(2, 160).
 	 ```
 
- 2. Opções do menu 
+2. Opções do menu 
     1. Cadastrar filial
 
 	Caso o usuário escolha a opção 1 (menu	inicial) , deve ser solicitado um
