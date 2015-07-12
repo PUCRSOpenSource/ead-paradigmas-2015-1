@@ -10,13 +10,13 @@ Enunciado T7
  arquivo de dados para fazer a leitura inicial dos dados e  a cláusula
  “controla” apresenta o seguinte menu  inicial :
 
- [1]  Cadastro de filial\s\s
- [2]  Compra de  produto\s\s
- [3]  Venda de  produto\s\s
- [4]  Envio de  produto\s\s
- [5]  Estoque\s\s
- [6]  Balanço\s\s
- [7] Análise\s\s
+ [1]  Cadastro de filial \s\s
+ [2]  Compra de  produto \s\s
+ [3]  Venda de  produto \s\s
+ [4]  Envio de  produto \s\s
+ [5]  Estoque \s\s
+ [6]  Balanço \s\s
+ [7] Análise \s\s
  [0] Sair
   
     1. Dados iniciais 
@@ -132,8 +132,8 @@ Enunciado T7
 	
 	[1] Estoque médio da empresa, considerando os estoques de todas as filiais \s\s
 	[2] Códigos e estoques das filiais com estoque maior que um dado valor \s\s
-	[3] Diferença (total das compras menos total das vendas) em toda a empresa\s\s
-	[4] Estoque total da empresa , considerando os estoques de todas as filiais\s\s
+	[3] Diferença (total das compras menos total das vendas) em toda a empresa \s\s
+	[4] Estoque total da empresa , considerando os estoques de todas as filiais \s\s
 	[5] Voltar
 
 	Para cada opção que o usuário escolher deve ser apresentada na tela a
